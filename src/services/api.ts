@@ -1,11 +1,8 @@
 import axios from 'axios';
 
 // Create an axios instance with base URL
-const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
-  // Add timeout to avoid hanging requests
-  timeout: 10000,
-});
+const API_URL = import.meta.env.VITE_API_URL || 'https://placesuccess-backend-render-1.onrender.com';
+
 
 // Add request interceptor to add auth token
 api.interceptors.request.use((config) => {
